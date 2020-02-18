@@ -17,7 +17,7 @@ switch ($page) {
         $header = "";
         break;
     case "appointment":
-        $getpage = "public/";
+        $getpage = "public/appointment";
         $header = "appointment";
         break;
     case "register":
