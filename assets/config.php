@@ -10,7 +10,7 @@ $host['password'] = "";
 $host['database'] = "ihs";
 //Server//
 $servername = "Hair Styling";
-$version    = "0.1 (Alpha)";
+$version    = "0.2 (Alpha)";
 //session link//
 $connect = mysqli_connect($host['hostname'],$host['user'],$host['password'],$host['database']) or die ("can't connect to server");
 

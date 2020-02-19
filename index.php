@@ -16,6 +16,10 @@ switch ($page) {
         $getpage = "";
         $header = "";
         break;
+    case "contact":
+        $getpage = "public/contact";
+        $header = "Contact";
+        break;
     case "appointment":
         $getpage = "public/appointment";
         $header = "appointment";
