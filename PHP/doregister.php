@@ -21,7 +21,7 @@ if (isset($_POST['register'])) {
     } elseif ($birth == null) {
         echo "please enter in a birthday.";
     } else {
-        mysqli_query($connect, "INSERT INTO `client` (`username`,`password`,`birthdate`,`lastknownip`) VALUES ('". $username ."','". password_hash($password, PASSWORD_DEFAULT)."','". $birth ."','".$ip."')") or die(mysqli_error($connect));
+        mysqli_query($connect, "INSERT INTO `client` (`username`,`password`,`birthdate`) VALUES ('". $username ."','". password_hash($password, PASSWORD_DEFAULT)."','". $birth ."')") or die(mysqli_error($connect));
         echo "you are now registered to ".$servername."!";
     }
 }
