@@ -20,6 +20,7 @@
             </div>
             <a href="?p=home">Home</a>
             <a href="?p=register">Register</a>
+            <a href="?p=login">Login</a>
             <a href="?p=appointment">Appointment</a>
             <a href="?p=contact">Contact Us</a>
             
