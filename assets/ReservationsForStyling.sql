@@ -1,5 +1,5 @@
-/**
- * Author:  gabri
+/*
+ * Author:  gabriel
  * Created: Jan 11, 2020
  */
 DROP DATABASE IF EXISTS IngridHairSalon;

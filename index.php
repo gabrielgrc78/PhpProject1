@@ -37,7 +37,7 @@ switch ($page) {
         $getpage = "public/home";
         break;
 }
-include_once ('assets/top.php');
+include_once('assets/top.php');
 include_once ($getpage.".php");
-include_once ('assets/bottom.php');
+include_once('assets/bottom.php');
 ?>
