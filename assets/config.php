@@ -6,13 +6,13 @@ session_start();
 
 $host['hostname'] = "localhost:3308";
 $host['user']     = "root";
-$host['password'] = "admin";
+$host['password'] = "password";
 $host['database'] = "IngridHairSalon";
 //Server//
 $servername = "Yngrid's Hair Styling";
 $version    = "0.3 (Alpha)";
 //session link//
-$connect = mysqli_connect($host['hostname'],$host['user'],$host['password'],$host['database']) or die ("can't connect to server");
+$connect = mysqli_connect($host['hostname'],$host['user'],$host['password'],$host['database']) ;//or die ("can't connect to server");
 
 function sql_janitor ($sCode) {
     if (function_exists("mysqli_real_escape_string")) {
