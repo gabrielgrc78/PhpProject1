@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ERROR);
-include 'assets/config.php';
+include_once 'assets/config.php';
 $page = @$_GET['p'];
 switch ($page) {
     case null:
