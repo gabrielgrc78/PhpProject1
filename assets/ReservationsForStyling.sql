@@ -11,9 +11,9 @@ CREATE TABLE IngridHairSalon.clients (
     `username` VARCHAR(50) NOT NULL,
     `password` VARCHAR(50) NOT NULL,
     `birthdate` DATE NOT NULL,
-    `admin`    BOOLEAN NOT NULL,
+    `lastknownip` VARCHAR(20) NOT NULL,
     `joined on`TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `last login` TIMESTAMP NULL DEFAULT NULL,
-    `lastknownip` VARCHAR(20) NOT NULL
+    `admin`    BOOLEAN NOT NULL
 
 ) ENGINE=INNODB AUTO_INCREMENT=1;

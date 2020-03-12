@@ -1,5 +1,5 @@
 
-<form action="PHP/doregister.php" method="post">
+<form action="?p=dr" method="post">
     <label for="username"><b>Username</b></label>
     <input type="text" placeholder="Enter username here" name="username" required>
     

@@ -6,7 +6,7 @@ if (isset($_POST['register'])) {
     $password = mysqli_real_escape_string($connect, $_POST['password']);
     $birth = $_POST['DoB'];
     $ip = getenv("REMOTE_ADDR");
-    $ucheck = mysqli_query($connect, "SELECT * FROM `client` WHERE `username`='".$username."'") or die(mysqli_error($connect));
+    $ucheck = mysqli_query($connect, "SELECT * FROM `clients` WHERE `username`='".$username."'") or die(mysqli_error($connect));
     
     if(mysqli_num_rows($ucheck) >= 1) {
         echo "Please enter another username.";
@@ -21,7 +21,7 @@ if (isset($_POST['register'])) {
     } elseif ($birth == null) {
         echo "please enter in a birthday.";
     } else {
-        mysqli_query($connect, "INSERT INTO `client` (`username`,`password`,`birthdate`) VALUES ('". $username ."','". password_hash($password, PASSWORD_DEFAULT)."','". $birth ."')") or die(mysqli_error($connect));
+        mysqli_query($connect, "INSERT INTO `clients` (`username`,`password`,`birthdate`,`lastknownip`) VALUES ('". $username ."','". password_hash($password, PASSWORD_DEFAULT)."','". $birth ."','".$ip."')") or die(mysqli_error($connect));
         echo "you are now registered to ".$servername."!";
     }
 }

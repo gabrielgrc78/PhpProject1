@@ -32,6 +32,10 @@ switch ($page) {
         $getpage = "public/register";
         $header = "Register";
         break;
+    case "dr":
+        $getpage = "PHP/doregister";
+        $header = "Registering";
+        break;
     default:
         $title = $servername."";
         $getpage = "public/home";
