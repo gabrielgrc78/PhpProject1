@@ -4,9 +4,9 @@ if (basename($_SERVER["PHP_SELF"])=== "config.php"){
 }
 session_start();
 
-$host['hostname'] = "localhost";
-$host['user']     = "root";
-$host['password'] = "password";
+$host['hostname'] = "localhost:3308";
+$host['user'] = "root";
+$host['password'] = "";
 $host['database'] = "IngridHairSalon";
 //Server//
 $servername = "Yngrid's Hair Styling";
