@@ -20,7 +20,8 @@ CREATE TABLE IngridHairSalon.clients (
     `joined on`     TIMESTAMP                                NOT NULL    DEFAULT     CURRENT_TIMESTAMP,
     `last login`    TIMESTAMP                                NULL        DEFAULT     NULL,
     `admin`         BOOLEAN                                  NOT NULL,
-    `firsttime`     BOOLEAN                                  NOT NULL
+    `firsttime`     BOOLEAN                                  NOT NULL,
+    INDEX (`username`)
 ) ENGINE=INNODB AUTO_INCREMENT=1;
 
 DROP TABLE IF EXISTS IngridHairSalon.reserved;
@@ -30,7 +31,7 @@ CREATE TABLE IngridHairSalon.reserved (
   `Rdate`           DATE                                    NOT NULL,
   `Rtime`           TIME                                    NOT NULL,
   `created_on`      TIMESTAMP                               NOT NULL    DEFAULT     CURRENT_TIMESTAMP,
-  FOREIGN KEY (`username`) REFERENCES IngridHairSalon.clients(`username`)
+  CONSTRAINT reserved_ibfk_1 FOREIGN KEY (`username`) REFERENCES IngridHairSalon.clients(`username`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=INNODB AUTO_INCREMENT=1;
 
 DROP TABLE IF EXISTS IngridHairSalon.exreserved;

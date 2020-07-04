@@ -6,6 +6,11 @@
       <path value="/etc/php" />
     </include_path>
   </component>
+  <component name="PhpProjectServersManager">
+    <servers>
+      <server host="localhost" id="76c20eb5-ef55-4d96-a2ff-ea5b02ac5e46" name="Localhosts" />
+    </servers>
+  </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />
   <component name="PhpRuntimeConfiguration">
     <extensions>
