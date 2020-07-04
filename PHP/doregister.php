@@ -2,10 +2,10 @@
 error_reporting(E_ERROR);
 include_once 'C:\Users\gabri\OneDrive\Documents\GitHub\PhpProject1\assets\config.php';
 if (isset($_POST['register'])) {
-    $username = mysqli_real_escape_string($connect, $_POST['username']);
-    $email = mysqli_real_escape_string($connect,$_POST['email']);
-    $password = mysqli_real_escape_string($connect, $_POST['password']);
-    $chkpassword = mysqli_real_escape_string($connect, $_POST['chkpassword']);
+    $username =  $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $chkpassword = $_POST['chkpassword'];
     $birth = $_POST['DoB'];
     $ip = getenv("REMOTE_ADDR");
 
