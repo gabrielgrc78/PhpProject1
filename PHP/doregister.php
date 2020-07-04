@@ -1,28 +1,65 @@
 <?php
 error_reporting(E_ERROR);
-include_once 'C:\Users\gabri\OneDrive\Documents\NetBeansProjects\PhpProject1\assets\config.php';
+include_once 'C:\Users\gabri\OneDrive\Documents\GitHub\PhpProject1\assets\config.php';
 if (isset($_POST['register'])) {
     $username = mysqli_real_escape_string($connect, $_POST['username']);
+    $email = mysqli_real_escape_string($connect,$_POST['email']);
     $password = mysqli_real_escape_string($connect, $_POST['password']);
+    $chkpassword = mysqli_real_escape_string($connect, $_POST['chkpassword']);
     $birth = $_POST['DoB'];
     $ip = getenv("REMOTE_ADDR");
-    $ucheck = mysqli_query($connect, "SELECT * FROM `clients` WHERE `username`='".$username."'") or die(mysqli_error($connect));
-    
-    if(mysqli_num_rows($ucheck) >= 1) {
-        echo "Please enter another username.";
-    } elseif (strlen($username) < 4) {
-        echo "username must be between 4 and 12 characters!";
-    } elseif (strlen($username) > 12) {
-        echo "username must be between 4 and 12 characters!";
-    } elseif (strlen($password) < 6) {
-        echo "password must be between 4 and 12 characters!";
-    } elseif (strlen($password) > 12) {
-        echo "password must be between 4 and 12 characters!";
-    } elseif ($birth == null) {
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $username)) {
+        echo "Improper email and username";
+        exit();
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "invalid email";
+        exit();
+    } elseif (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
+        echo "Invalid username!";
+        exit();
+    } elseif ($password !== $chkpassword) {
+        echo "password do not match";
+        exit();
+    }  elseif ($birth == null) {
         echo "please enter in a birthday.";
+        exit();
     } else {
-        mysqli_query($connect, "INSERT INTO `clients` (`username`,`password`,`birthdate`,`lastknownip`) VALUES ('". $username ."','". password_hash($password, PASSWORD_DEFAULT)."','". $birth ."','".$ip."')") or die(mysqli_error($connect));
-        echo "you are now registered to ".$servername."!";
+        $sql = "SELECT `username` FROM `Clients` WHERE `username`=?";
+        $stmt = mysqli_stmt_init($connect);
+        if (!mysqli_stmt_prepare($stmt, $sql)){
+            echo "ERROR = 01: Connection Error";
+            exit();
+        } else {
+            mysqli_stmt_bind_param($stmt, "s", $username);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_store_result($stmt);
+            $rc = mysqli_stmt_num_rows($stmt);
+            if ($rc > 0) {
+                echo "ERROR: Username exist";
+                exit();
+            } else {
+                $sql = "INSERT INTO `Clients` (`username`,`email`,`password`,`birthdate`,`lastknownip`) VALUES (?,?,?,?,?)";
+                $stmt = mysqli_stmt_init($connect);
+                if (!mysqli_stmt_prepare($stmt, $sql)){
+                    echo "ERROR = 02: Connection Error";
+                    exit();
+                } else {
+                    $securedpass = password_hash($password, PASSWORD_DEFAULT);
+                    mysqli_stmt_bind_param($stmt, "sssss", $username,$email, $securedpass, $birth, $ip);
+                    mysqli_stmt_execute($stmt);
+                    mysqli_stmt_store_result($stmt);
+                    echo "you are now registered to ".$servername."!";
+                }
+
+            }
+        }
+        mysqli_stmt_close($stmt);
+        mysqli_close($connect);
+    }
+    else {
+        header("Location:\"?p=register\"");
+        exit();
     }
 }
 ?>
