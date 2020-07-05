@@ -3,14 +3,14 @@ if (basename($_SERVER["PHP_SELF"])=== "config.php"){
     die("Error 404");
 }
 session_start();
-
+//Connection Link//
 $host['hostname'] = "localhost";
 $host['user'] = "root";
 $host['password'] = "";
 $host['database'] = "IngridHairSalon";
 //Server//
 $servername = "Yngrid's Hair Styling";
-$version    = "0.3 (Alpha)";
+$version    = "0.4 (Alpha)";
 //session link//
 $connect = mysqli_connect($host['hostname'],$host['user'],$host['password'],$host['database']) or die ("can't connect to server");
 
