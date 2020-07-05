@@ -2,4 +2,7 @@
   <component name="DefaultFont">
     <option name="SECONDARY_FONT_FAMILY" value="Consolas" />
   </component>
+  <component name="TodoConfiguration">
+    <pattern pattern="\b(todo|fixme)\b.*" />
+  </component>
 </application>
