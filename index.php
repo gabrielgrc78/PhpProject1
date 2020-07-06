@@ -16,6 +16,10 @@ switch ($page) {
         $getpage = "";
         $header = "";
         break;
+    case "status":
+        $getpage = "PHP/status";
+        $header = "System Status";
+        break;
     case "login":
         $getpage = "public/login";
         $header = "Login";
@@ -33,7 +37,7 @@ switch ($page) {
         $header = "Register";
         break;
     case "dr":
-        $getpage = "PHP/doregister";
+        $getpage = "PHP\doregister";
         $header = "Registering";
         break;
     default:

@@ -23,6 +23,7 @@
             <a href="?p=login">Login</a>
             <a href="?p=appointment">Appointment</a>
             <a href="?p=contact">Contact Us</a>
+            <a href="?p=status">System Status</a>
             
         </div>
    
