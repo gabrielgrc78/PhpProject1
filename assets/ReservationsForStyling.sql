@@ -42,4 +42,4 @@ CREATE TABLE IngridHairSalon.exreserved (
   `email`           LONGTEXT                               NOT NULL,
   `phone`           VARCHAR(10)                            NOT NULL,
   `created_on`      TIMESTAMP                              NOT NULL     DEFAULT    CURRENT_TIMESTAMP
-  )AUTO_INCREMENT=1;
+  )ENGINE=INNODB AUTO_INCREMENT=1;
