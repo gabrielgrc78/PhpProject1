@@ -2,7 +2,7 @@
 error_reporting(E_ERROR);
 include_once '..\assets\config.php';
 if (isset($_POST['register'])) {
-    $username =  $_POST['username'];
+    $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $chkpassword = $_POST['chkpassword'];
@@ -21,7 +21,7 @@ if (isset($_POST['register'])) {
     } elseif ($password !== $chkpassword) {
         echo "<p><fieldset style=\"text-align: center;color: crimson\">password do not match</fieldset></p>";
 
-    }  elseif ($birth == null) {
+    } elseif ($birth == null) {
         echo "<p><fieldset style=\"text-align: center;color: crimson\">please enter in a birthday</fieldset></p>.";
 
     } else {
@@ -46,7 +46,7 @@ if (isset($_POST['register'])) {
 
                 } else {
                     $securedpass = password_hash($password, PASSWORD_DEFAULT);
-                    mysqli_stmt_bind_param($stmt, "sssss", $username, $securedpass,$birth,$email,$ip);
+                    mysqli_stmt_bind_param($stmt, "sssss", $username, $securedpass, $birth, $email, $ip);
                     mysqli_stmt_execute($stmt);
                     mysqli_stmt_store_result($stmt);
                     echo "<p><fieldset><div style=\"text-align: center;color:green\">You are now registered to " . $servername . "!</div></fieldset></p>";
@@ -57,8 +57,7 @@ if (isset($_POST['register'])) {
         mysqli_stmt_close($stmt);
         mysqli_close($connect);
     }
-}
-else {
+} else {
     header("Location:?p=register");
     exit();
 }
