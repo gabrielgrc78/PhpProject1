@@ -39,14 +39,14 @@ if (isset($_POST['register'])) {
                 echo "<p><fieldset><div style=\"text-align: center;color: crimson\">ERROR: Username exist</div></fieldset></p>";
 
             } else {
-                $sql = "INSERT INTO `clients` (`username`,`email`,`password`,`birthdate`,`lastknownip`) VALUES (?,?,?,?,?)";
+                $sql = "INSERT INTO `clients` (`username`,`password`,`birthdate`,`email`,`lastknownip`) VALUES (?,?,?,?,?)";
                 $stmt = mysqli_stmt_init($connect);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
                     echo "<p><fieldset><div style=\"text-align: center;color: crimson\">ERROR = 02: Connection Error</div></fieldset></p>";
 
                 } else {
                     $securedpass = password_hash($password, PASSWORD_DEFAULT);
-                    mysqli_stmt_bind_param($stmt, "sssss", $username, $email, $securedpass,$birth,$ip);
+                    mysqli_stmt_bind_param($stmt, "sssss", $username, $securedpass,$birth,$email,$ip);
                     mysqli_stmt_execute($stmt);
                     mysqli_stmt_store_result($stmt);
                     echo "<p><fieldset><div style=\"text-align: center;color:green\">You are now registered to " . $servername . "!</div></fieldset></p>";

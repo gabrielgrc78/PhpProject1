@@ -16,7 +16,7 @@
     <body>
         <div class="NavBar">
             <div id="Title">
-               <img src="assets/img/LogoMakr_6CVBIV.png" alt="Ingrid Hair Salon"/>
+               <img src="assets/img/LogoMakr_6CVBIV.png" alt="Yngrid Hair Salon"/>
             </div>
             <a href="?p=home">Home</a>
             <a href="?p=register">Register</a>

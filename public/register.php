@@ -1,4 +1,5 @@
-
+<br>
+<fieldset style= text-align:center;>
 <form action="?p=dr" method="post">
     <label for="username"><b>Username</b></label>
     <input type="text" placeholder="Enter username here" name="username" required>
@@ -17,3 +18,5 @@
     <br>
     <button type="submit" name="register">Submit</button>
 </form>
+</fieldset>
+<br>
