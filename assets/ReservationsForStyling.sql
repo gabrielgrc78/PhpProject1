@@ -15,7 +15,7 @@ CREATE TABLE IngridHairSalon.clients (
     `password`      LONGTEXT                                 NOT NULL,
     `birthdate`     DATE                                     NOT NULL,
     `email`         VARCHAR(80)                              NOT NULL,
-    `phone`         VARCHAR(11)                              NOT NULL,
+    `phone`         VARCHAR(12)                              NOT NULL,
     `lastknownip`   VARCHAR(20)                              NOT NULL,
     `joined on`     TIMESTAMP                                NOT NULL    DEFAULT     CURRENT_TIMESTAMP,
     `last login`    TIMESTAMP                                NULL        DEFAULT     NULL,
@@ -42,4 +42,4 @@ CREATE TABLE IngridHairSalon.exreserved (
   `email`           LONGTEXT                               NOT NULL,
   `phone`           VARCHAR(10)                            NOT NULL,
   `created_on`      TIMESTAMP                              NOT NULL     DEFAULT    CURRENT_TIMESTAMP
-  )AUTO_INCREMENT=1;
+  )ENGINE=INNODB AUTO_INCREMENT=1;
