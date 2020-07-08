@@ -23,6 +23,7 @@ if (isset($_POST['FinReg'])){
     $FN = $_POST['Fname'];
     $LN = $_POST['Lname'];
     $tel = $_POST['PN'];
+    $fts = false;
     if(empty($FN) && empty($LN) && empty($tel)){
         echo "<p><fieldset style=\"text-align: center;color: crimson\">please provide your First and Last name, and Phone Number.</fieldset></p>.";
     }else {
@@ -31,7 +32,7 @@ if (isset($_POST['FinReg'])){
         if (!mysqli_stmt_prepare($stmt, $sql)){
             echo "<p><fieldset style=\"text-align: center;color: crimson\">ERROR 03: Connection Error</fieldset></p>.";
         } else {
-            mysqli_stmt_bind_param($stmt, "sssi",$FN, $LN, $tel, 1);
+            mysqli_stmt_bind_param($stmt, "sssi",$FN, $LN, $tel, $fts);
             mysqli_stmt_execute($stmt);
             mysqli_stmt_store_result($stmt);
             echo "<p><fieldset style=\"text-align: center;color:green\">Registration is now completed</fieldset></p>.";

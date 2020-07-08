@@ -9,7 +9,7 @@
             <label for="password"><b>Password</b></label>
             <input type="password" placeholder="Enter Password here" name="password" required>
             <br>
-            <button type="submit" name="login">Submit</button>
+            <button type="submit" name="login-submit">Submit</button>
         </form>
     <br>
     </fieldset>

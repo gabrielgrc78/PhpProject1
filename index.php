@@ -20,9 +20,9 @@ switch ($page) {
         $getpage = "public/lappointment";
         $header = "Appointment";
         break;
-    case "":
-        $getpage= "";
-        $header= "";
+    case "logout":
+        $getpage= "public/logout";
+        $header= "logging out";
         break;
     case "dl":
         $getpage = "PHP/dologin";

@@ -8,6 +8,7 @@ if (isset($_POST['register'])) {
     $chkpassword = $_POST['chkpassword'];
     $birth = $_POST['DoB'];
     $ip = getenv("REMOTE_ADDR");
+    $fts = true;
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $username)) {
         echo "<p><fieldset style=\"text-align: center;color: crimson\">Improper email and username</fieldset></p>";
@@ -39,14 +40,14 @@ if (isset($_POST['register'])) {
                 echo "<p><fieldset><div style=\"text-align: center;color: crimson\">ERROR: Username exist</div></fieldset></p>";
 
             } else {
-                $sql = "INSERT INTO `clients` (`username`,`password`,`birthdate`,`email`,`lastknownip`) VALUES (?,?,?,?,?)";
+                $sql = "INSERT INTO `clients` (`username`,`password`,`birthdate`,`email`,`lastknownip`,`firsttime`) VALUES (?,?,?,?,?,?)";
                 $stmt = mysqli_stmt_init($connect);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
                     echo "<p><fieldset><div style=\"text-align: center;color: crimson\">ERROR = 02: Connection Error</div></fieldset></p>";
 
                 } else {
                     $securedpass = password_hash($password, PASSWORD_DEFAULT);
-                    mysqli_stmt_bind_param($stmt, "sssss", $username, $securedpass, $birth, $email, $ip);
+                    mysqli_stmt_bind_param($stmt, "sssssi", $username, $securedpass, $birth, $email, $ip,$fts);
                     mysqli_stmt_execute($stmt);
                     mysqli_stmt_store_result($stmt);
                     echo "<p><fieldset><div style=\"text-align: center;color:green\">You are now registered to " . $servername . "!</div></fieldset></p>";

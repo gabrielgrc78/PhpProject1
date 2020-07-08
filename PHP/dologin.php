@@ -1,8 +1,8 @@
 <?php
 
 
-if (isset($_POST['login'])){
-    require '../assets/config.php';
+if (isset($_POST['login-submit'])){
+    include_once '../assets/config.php';
     $cU = $_POST['ueid'];
     $cP = $_POST['password'];
 
@@ -27,13 +27,10 @@ if (isset($_POST['login'])){
                 } elseif ($cPC === true) {
                     session_start();
                     $_SESSION['user'] = $row['username'];
-                    if($row['admin'] == true){
-                        $_SESSION['admin'] = $row['admin'];
-                    }
-                    if($row['firsttime'] = true){
+                    $_SESSION['admin'] = $row['admin'];
+                    if($row['firsttime'] === true){
                         header("Location:?p=cr");
                     }
-
                     echo "<br /><center>Login success.<br/>Returning to front page in 2 seconds.</center><br />
                     <meta http-equiv='refresh' content='1;url=\"?p=index\"'>";
 

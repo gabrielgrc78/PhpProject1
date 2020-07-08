@@ -22,16 +22,21 @@ session_start();
             </div>
             <a href="?p=home">Home</a>
             <?php
-            if (!isset($_SESSION['username'])){
+            if (!isset($_SESSION['user'])){
             echo "<a href=\"?p=register\">Register</a>
                   <a href=\"?p=login\">Login</a>
                   <a href=\"?p=la\">Appointment</a>";
             } else {
-                echo "<a href=\"?p=logout\" > Logout</a>
+                if ($_SESSION['admin'] == true){
+                    echo "<a href=\"?p=logout\" > Logout</a>
+                          <a href=\"?p=ga\">Appointment</a>
+                          <a href=\"?p=status\">System Status</a>";
+                }else {
+                    echo "<a href=\"?p=logout\" > Logout</a>
                       <a href=\"?p=ga\">Appointment</a>";
             }
             ?>
-            <a href="?p=status">System Status</a>
+
 
 
             <a href="?p=contact">Contact Us</a>
