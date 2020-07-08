@@ -1,11 +1,12 @@
 <br>
 <fieldset style= text-align:center;>
 <form action="?p=dr" method="post">
+    <h2>Register</h2>
     <label for="username"><b>Username</b></label>
     <input type="text" placeholder="Enter username here" name="username" required>
     <br>
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter email here" name="email" required>
+    <input type="email" placeholder="Enter email here" name="email" required>
     <br>
     <label for="password"><b>Password</b></label>
     <input type="password" placeholder="Enter password here" name="password" required>

@@ -16,6 +16,22 @@ switch ($page) {
         $getpage = "";
         $header = "";
         break;
+    case "la":
+        $getpage = "public/lappointment";
+        $header = "Appointment";
+        break;
+    case "":
+        $getpage= "";
+        $header= "";
+        break;
+    case "dl":
+        $getpage = "PHP/dologin";
+        $header = "Login Processing";
+        break;
+    case "cr":
+        $getpage = "public/ConRegister";
+        $header = "Continuing Registration";
+        break;
     case "status":
         $getpage = "PHP/status";
         $header = "System Status";
@@ -28,16 +44,16 @@ switch ($page) {
         $getpage = "public/contact";
         $header = "Contact";
         break;
-    case "appointment":
-        $getpage = "public/appointment";
-        $header = "appointment";
+    case "ga":
+        $getpage = "public/gappointment";
+        $header = "Guest appointment";
         break;
     case "register":
         $getpage = "public/register";
         $header = "Register";
         break;
     case "dr":
-        $getpage = "PHP\doregister";
+        $getpage = "PHP/doregister";
         $header = "Registering";
         break;
     default:
