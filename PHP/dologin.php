@@ -28,7 +28,8 @@ if (isset($_POST['login-submit'])){
                     session_start();
                     $_SESSION['user'] = $row['username'];
                     $_SESSION['admin'] = $row['admin'];
-                    if($row['firsttime'] === true){
+                    if($row['firsttime'] == true){
+                        $_SESSION['id'] = $row['clientID'];
                         header("Location:?p=cr");
                     }
                     echo "<br /><center>Login success.<br/>Returning to front page in 2 seconds.</center><br />

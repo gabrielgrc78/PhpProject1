@@ -15,7 +15,7 @@ CREATE TABLE IngridHairSalon.clients (
     `password`      LONGTEXT                                 NOT NULL,
     `birthdate`     DATE                                     NOT NULL,
     `email`         VARCHAR(80)                              NOT NULL,
-    `phone`         VARCHAR(11)                              NOT NULL,
+    `phone`         VARCHAR(12)                              NOT NULL,
     `lastknownip`   VARCHAR(20)                              NOT NULL,
     `joined on`     TIMESTAMP                                NOT NULL    DEFAULT     CURRENT_TIMESTAMP,
     `last login`    TIMESTAMP                                NULL        DEFAULT     NULL,
