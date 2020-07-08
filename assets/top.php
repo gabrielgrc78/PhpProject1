@@ -34,6 +34,7 @@ session_start();
                 }else {
                     echo "<a href=\"?p=logout\" > Logout</a>
                       <a href=\"?p=ga\">Appointment</a>";
+                }
             }
             ?>
 
