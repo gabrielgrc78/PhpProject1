@@ -38,7 +38,7 @@ if (isset($_POST['FinReg'])){
             mysqli_stmt_bind_param($stmt, "sssii",$FN, $LN, $tel, $fts, $_SESSION['id']);
             mysqli_stmt_execute($stmt);
             mysqli_stmt_store_result($stmt);
-            echo "<p><fieldset style=\"text-align: center;color:green\">Registration is now completed</fieldset></p>.";
+            echo "<p><fieldset style=\"text-align: center;color:green\">Registration is now completed</fieldset></p><meta http-equiv='refresh' content='1;url=\"?p=home\"'>";
         }
         mysqli_stmt_close($stmt);
         mysqli_close($connect);
