@@ -8,7 +8,7 @@ session_start();
         <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
         <link rel="stylesheet" type="text/css" href="assets/css/normalize.css"/>
         <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
-        <script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery-3.5.1.min.js"></script>
         <script type="text/javascript" src="assets/js/main.js"></script>
         <meta name="viewport" content="width=device=width, initial-scale=1"/>
         <meta http-equiv="X-UA-Compatible" content="IE=EDGE; chrome=1"/>
