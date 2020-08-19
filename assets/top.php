@@ -25,11 +25,11 @@ session_start();
             if (!isset($_SESSION['user'])){
             echo "<a href=\"?p=register\">Register</a>
                   <a href=\"?p=login\">Login</a>
-                  <a href=\"?p=la\">Appointment</a>";
+                  <a href=\"?p=ga\">Appointment</a>";
             } else {
                 if ($_SESSION['admin'] == true){
                     echo "<a href=\"?p=logout\" > Logout</a>
-                          <a href=\"?p=ga\">Appointment</a>
+                          <a href=\"?p=la\">Appointment</a>
                           <a href=\"?p=status\">System Status</a>";
                 }else {
                     echo "<a href=\"?p=logout\" > Logout</a>
