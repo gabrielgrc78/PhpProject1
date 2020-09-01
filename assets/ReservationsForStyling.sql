@@ -3,11 +3,11 @@
  * Created: Jan 11, 2020
  * Version: 4.0
  */
-DROP DATABASE IF EXISTS IngridHairSalon;
-CREATE DATABASE IngridHairSalon;
+DROP DATABASE IF EXISTS YngridHairSalon;
+CREATE DATABASE YngridHairSalon;
 
-DROP TABLE IF EXISTS IngridHairSalon.clients;
-CREATE TABLE IngridHairSalon.clients (
+DROP TABLE IF EXISTS YngridHairSalon.clients;
+CREATE TABLE YngridHairSalon.clients (
     `clientID`      TINYINT     AUTO_INCREMENT  PRIMARY KEY  NOT NULL,
     `Fname`         VARCHAR(50)                              NOT NULL,
     `Lname`         VARCHAR(50)                              NOT NULL,
@@ -24,8 +24,8 @@ CREATE TABLE IngridHairSalon.clients (
     INDEX (`username`, `phone`, `email`)
 ) ENGINE=INNODB AUTO_INCREMENT=1;
 
-DROP TABLE IF EXISTS IngridHairSalon.reserved;
-CREATE TABLE IngridHairSalon.reserved (
+DROP TABLE IF EXISTS YngridHairSalon.reserved;
+CREATE TABLE YngridHairSalon.reserved (
   `reservationID`   INT         AUTO_INCREMENT  PRIMARY KEY NOT NULL,
   `username`        VARCHAR(50),
   `Rdate`           DATE                                    NOT NULL,
@@ -33,11 +33,11 @@ CREATE TABLE IngridHairSalon.reserved (
   `phone`           VARCHAR(12),
   `email`           VARCHAR(80),
   `created_on`      TIMESTAMP                               NOT NULL    DEFAULT     CURRENT_TIMESTAMP,
-  CONSTRAINT reserved_ibfk_1 FOREIGN KEY (`username`, `phone` , `email`) REFERENCES IngridHairSalon.clients(`username`, `phone`, `email`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT reserved_ibfk_1 FOREIGN KEY (`username`, `phone` , `email`) REFERENCES YngridHairSalon.clients(`username`, `phone`, `email`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=INNODB AUTO_INCREMENT=1;
 
-DROP TABLE IF EXISTS IngridHairSalon.exreserved;
-CREATE TABLE IngridHairSalon.exreserved (
+DROP TABLE IF EXISTS YngridHairSalon.exreserved;
+CREATE TABLE YngridHairSalon.exreserved (
   `exreservedID`    INT        AUTO_INCREMENT  PRIMARY KEY NOT NULL,
   `first`           VARCHAR(50)                            NOT NULL,
   `last`            VARCHAR(50)                            NOT NULL,

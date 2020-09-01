@@ -7,7 +7,7 @@ session_start();
 $host['hostname'] = "localhost";
 $host['user'] = "root";
 $host['password'] = "";
-$host['database'] = "IngridHairSalon";
+$host['database'] = "YngridHairSalon";
 $host['port'] = "3306";
 //Server//
 $servername = "Yngrid's Hair Styling";

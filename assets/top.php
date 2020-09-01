@@ -20,7 +20,8 @@ session_start();
             <div id="Title">
                <img alt="Yngrid Hair Salon" src="assets/img/LogoMakr_6CVBIV.png"/>
             </div>
-            <a href="?p=home">Home</a>
+
+            <?php if ($header == "Home") {echo "<a class=active href=\"?p=home\">Home</a>";} else {echo "<a href=\"?p=home\">Home</a>";}?>
             <?php
             if (!isset($_SESSION['user'])){
             echo "<a href=\"?p=register\">Register</a>
@@ -33,14 +34,10 @@ session_start();
                           <a href=\"?p=status\">System Status</a>";
                 }else {
                     echo "<a href=\"?p=logout\" > Logout</a>
-                      <a href=\"?p=ga\">Appointment</a>";
+                          <a href=\"?p=ga\">Appointment</a>";
                 }
             }
             ?>
-
-
-
             <a href="?p=contact">Contact Us</a>
-
         </div>
    

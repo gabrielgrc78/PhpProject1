@@ -1,0 +1,37 @@
+/*Add a black background color to the top navigation bar*/
+.NavBar{
+    position: fixed;
+    width: 1340px;
+    height: 159px;
+    background: #C4C4C4;
+    border-radius: 10px;
+}
+/*Style the links inside the top navigation bar*/
+.NavBar a {
+    float: left;
+    color: #701fd4;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+/*Changes the color of the links on hover*/
+.NavBar a:hover {
+    background-color: darkgray;
+    color: black;
+}
+/*Add a color to the active/current link*/
+.NavBar a.active{
+    background-color: #4CAF50;
+    color: white;
+}
+/*Styling for the footer*/
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: gray;
+    color: black;
+    text-align: center;
+}
