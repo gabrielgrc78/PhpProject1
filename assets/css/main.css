@@ -1,10 +1,7 @@
 /*Add a black background color to the top navigation bar*/
 .NavBar{
-    position: fixed;
-    width: 1340px;
-    height: 159px;
-    background: #C4C4C4;
-    border-radius: 10px;
+    background-color: #333;
+    overflow: hidden;
 }
 /*Style the links inside the top navigation bar*/
 .NavBar a {
