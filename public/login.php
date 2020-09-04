@@ -1,4 +1,5 @@
-    <body>
+
+    <br>
     <fieldset style="text-align: center;">
     <br>
         <h2>Login</h2>
@@ -13,4 +14,3 @@
         </form>
     <br>
     </fieldset>
-    </body>
