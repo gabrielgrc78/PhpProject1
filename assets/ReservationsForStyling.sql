@@ -1,7 +1,7 @@
 /*
  * Author:  gabriel
  * Created: Jan 11, 2020
- * Version: 4.0
+ * Version: 4.1
  */
 DROP DATABASE IF EXISTS YngridHairSalon;
 CREATE DATABASE YngridHairSalon;

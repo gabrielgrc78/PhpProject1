@@ -24,9 +24,9 @@ session_start();
             <?php if ($header == "Home") {echo "<a class=active href=\"?p=home\">Home</a>";} else {echo "<a href=\"?p=home\">Home</a>";}?>
             <?php
             if (!isset($_SESSION['user'])){
-            echo "<a href=\"?p=register\">Register</a>
-                  <a href=\"?p=login\">Login</a>
-                  <a href=\"?p=ga\">Appointment</a>";
+                if ($header == "Register") {echo "<a class=active href=\"?p=register\">Register</a>";} else {echo "<a href=\"?p=register\">Register</a>";}
+                if ($header == "Login") {echo"<a class=active href=\"?p=login\">Login</a>";} else {echo"<a href=\"?p=login\">Login</a>";}
+                if ($header == "Guest appointment") {echo "<a class=action href=\"?p=ga\">Appointment</a>";} else {echo "<a href=\"?p=ga\">Appointment</a>";}
             } else {
                 if ($_SESSION['admin'] == true){
                     echo "<a href=\"?p=logout\" > Logout</a>
@@ -38,6 +38,6 @@ session_start();
                 }
             }
             ?>
-            <a href="?p=contact">Contact Us</a>
+            <?PHP if ($header == "Contact") {echo "<a class=active href=\"?p=contact\">Contact Us</a>";} else {echo "<a href=\"?p=contact\">Contact Us</a>";}?>
         </div>
    
