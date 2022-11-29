@@ -1,7 +1,7 @@
 /*
  * Author:  gabriel
  * Created: Jan 11, 2020
- * Version: 4.1
+ * Version: 4.2
  */
 DROP DATABASE IF EXISTS YngridHairSalon;
 CREATE DATABASE YngridHairSalon;
@@ -24,6 +24,21 @@ CREATE TABLE YngridHairSalon.clients (
     INDEX (`username`, `phone`, `email`)
 ) ENGINE=INNODB AUTO_INCREMENT=1;
 
+DROP TABLE IF EXISTS YngridHairSalon.Reservations;
+CREATE TABLE YngridHairSalon.Reservations (
+  `reservationID`   INT         AUTO_INCREMENT  PRIMARY KEY  NOT NULL,
+  `username`        VARCHAR(50),
+  `fname`           VARCHAR(50)                              NULL,
+  `lname`           VARCHAR(50)                              NULL,
+  `date`            DATE                                     NOT NULL,
+  `time`            TIME                                     NOT NULL,
+  `phone`           VARCHAR(12),
+  `email`           VARCHAR(80),
+  `created_on`      TIMESTAMP                                NOT NULL    DEFAULT      CURRENT_TIMESTAMP,
+  CONSTRAINT reserved_ibfk_1 FOREIGN KEY (`username`, `phone` , `email`) REFERENCES YngridHairSalon.clients(`username`, `phone`, `email`) ON DELETE CASCADE ON UPDATE CASCADE
+)ENGINE=INNODB AUTO_INCREMENT=1;
+
+/*
 DROP TABLE IF EXISTS YngridHairSalon.reserved;
 CREATE TABLE YngridHairSalon.reserved (
   `reservationID`   INT         AUTO_INCREMENT  PRIMARY KEY NOT NULL,
